@@ -102,3 +102,8 @@ a {
   position: relative;
   left: 0px;
 }
+
+.code-source {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
