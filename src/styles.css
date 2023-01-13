@@ -107,3 +107,11 @@ a {
   font-family: "Courier New", Courier, monospace;
   text-align: center;
 }
+
+.weather-temperature .active {
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
