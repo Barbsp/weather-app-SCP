@@ -5,7 +5,8 @@ Technology used
 - CSS
 - JavaScript
 
-Author: Barbra Alves
+Author: Barbra Alves 
+
 Linkedin: https://www.linkedin.com/in/barbrapeña/
 
 
