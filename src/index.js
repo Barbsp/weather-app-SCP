@@ -102,7 +102,6 @@ currentLocationBtn.addEventListener("click", displayCurrentLocation);
 
 searchCity("New York");
 */
-//5 days forecast
 
 function userSearchSubmit(event) {
   event.preventDefault();
@@ -132,6 +131,7 @@ function displayCurrentWeather(response) {
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  displayForecast();
 }
 
 //Default location display (for the start)
@@ -153,8 +153,34 @@ function showPosition(position) {
 let currentLocationBtn = document.querySelector("#current-loc-btn");
 currentLocationBtn.addEventListener("click", displayCurrentLocation);
 
+searchCity("New York");
 
 // forecast
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
 
-searchCity("New York");
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     
+            <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+              <img
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                alt=""
+                width="36"
+              />
+              <div class="weather-forecas-temp">
+                <span class="weather-forecast-temp-max"> 18° </span>
+                <span class="weather-forecast-temp-min"> 16° </span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
