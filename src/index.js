@@ -153,4 +153,8 @@ function showPosition(position) {
 let currentLocationBtn = document.querySelector("#current-loc-btn");
 currentLocationBtn.addEventListener("click", displayCurrentLocation);
 
+
+// forecast
+
+
 searchCity("New York");

@@ -115,3 +115,18 @@ a {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+/* forecast new*/
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.6;
+}
