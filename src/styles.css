@@ -27,7 +27,7 @@ li {
 
 .weather-app {
   border: 1px solid #dadde1;
-  padding: 15px;
+  padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 700px;
@@ -76,7 +76,8 @@ a {
 }
 
 .card-body {
-  max-width: 90%;
+  width: 105px;
+  max-width: 80%;
   border-radius: 15px;
   justify-content: center;
   padding: 10px;
@@ -86,7 +87,6 @@ a {
 .card-body:hover {
   transform: scale(1.2);
   background-color: rgb(62, 93, 138, 0.7);
-  padding: 10px;
   color: white;
 }
 
@@ -119,7 +119,7 @@ a {
 /* forecast new*/
 
 .weather-forecast {
-  margin-top: 50px;
+  margin-top: 10px;
   text-align: center;
   color: #000;
   justify-content: center;
@@ -130,4 +130,8 @@ a {
 }
 .weather-forecast-temp-min {
   opacity: 0.6;
+}
+
+.day-card {
+  margin: auto;
 }

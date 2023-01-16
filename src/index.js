@@ -37,8 +37,8 @@ searchForm.addEventListener("submit", userSearchSubmit);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  //celsiusLink.classList.remove("active");
+  //fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
 }
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -47,8 +47,8 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  //celsiusLink.classList.add("active");
+  //fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 let celsiusTemp = null;
@@ -172,29 +172,32 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `     
-            <div class="col-2">
-              <div class="weather-forecast-date">${formatDay(
+        `        
+          <div class="day-card col">
+            <div class="card-body text-center">
+              <p class="weather-forecast-date">${formatDay(
                 forecastDay.time
-              )}</div>
+              )}</p>
               <img
                 src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                   forecastDay.condition.icon
                 }.png"
                 alt=""
-                width="36"
+                width="40"
               />
-              <div class="weather-forecas-temp">
+              <p class="weather-forecas-temp">
                 <span class="weather-forecast-temp-max"> ${Math.round(
                   forecastDay.temperature.maximum
                 )}° </span> / 
                 <span class="weather-forecast-temp-min"> ${Math.round(
                   forecastDay.temperature.minimum
                 )}° </span>
-              </div>
+              </p>
+            
+            </div>
             </div>`;
     }
   });
