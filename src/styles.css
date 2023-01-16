@@ -119,14 +119,14 @@ a {
 /* forecast new*/
 
 .weather-forecast {
-  margin-top: 20px;
+  margin-top: 50px;
   text-align: center;
   color: #000;
   justify-content: center;
 }
 
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 18px;
 }
 .weather-forecast-temp-min {
   opacity: 0.6;
