@@ -37,8 +37,8 @@ searchForm.addEventListener("submit", userSearchSubmit);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  //celsiusLink.classList.remove("active");
-  //fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
 }
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -47,8 +47,8 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  //celsiusLink.classList.add("active");
-  //fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 let celsiusTemp = null;
@@ -141,18 +141,18 @@ function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCurrentWeather);
 }
-function displayCurrentLocation(event) {
+function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
 function showPosition(position) {
-  let apiKey = "f0d090e44b50c091a69364839fa23474";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "7670b5bad10at2acef43458f5a3o2b37";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}`;
   axios.get(apiUrl).then(displayCurrentWeather);
 }
 let currentLocationBtn = document.querySelector("#current-loc-btn");
-currentLocationBtn.addEventListener("click", displayCurrentLocation);
+currentLocationBtn.addEventListener("click", getCurrentPosition);
 
 // forecast
 function formatDay(timestamp) {
@@ -165,7 +165,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -176,7 +175,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `        
-          <div class="day-card col">
+          <div class="day-card col-md ">
             <div class="card-body text-center">
               <p class="weather-forecast-date">${formatDay(
                 forecastDay.time
