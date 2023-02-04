@@ -5,6 +5,8 @@ Technology used
 - CSS
 - JavaScript
 
+Hosted on: Netlify
+
 Author: Barbra Alves 
 
 Linkedin: https://www.linkedin.com/in/barbrapeña/
